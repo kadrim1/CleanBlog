@@ -5,7 +5,7 @@ mysqli_query($db, "SET NAMES 'utf8'");
 
 //Retrieve data from database
 $q = mysqli_query($db, "SELECT * FROM posts NATURAL JOIN authors");
-
+$posts = Array();
 while ($row = mysqli_fetch_assoc($q)) {
     $posts[] = $row;
 }
@@ -73,7 +73,7 @@ while ($row = mysqli_fetch_assoc($q)) {
                     <a href="about.html">About</a>
                 </li>
                 <li>
-                    <a href="post.html">Sample Post</a>
+                    <a href="post.php">Sample Post</a>
                 </li>
                 <li>
                     <a href="contact.html">Contact</a>
@@ -110,7 +110,7 @@ while ($row = mysqli_fetch_assoc($q)) {
 
                 <div class="post-preview">
 
-                    <a href="post.html">
+                    <a href="post.php">
                         <h2 class="post-title">
                             <?= $post['post_title'] ?>
                         </h2>
